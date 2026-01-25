@@ -20,7 +20,9 @@ export interface Assignment {
     thumbnail?: string; // Optional as it was used in UI but might not be in API
     description?: string; // Optional as it was used in UI
 }
-
+export interface totalEnrolledCourses{
+    totalEnrolledCourses:number
+}
 export interface SubmittedAssignment {
     id: string;
     title: string;
@@ -36,4 +38,5 @@ export interface StudentOverviewResponse {
     dueAssignments: Assignment[];
     assignments: Assignment[]; // keeping for backward compat if needed, or alias
     submittedAssignments: SubmittedAssignment[];
+    totalEnrolledCourses:totalEnrolledCourses[]
 }

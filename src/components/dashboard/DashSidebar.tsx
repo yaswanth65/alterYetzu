@@ -18,7 +18,8 @@ import {
     MonitorPlay,
     Award,
     DollarSign,
-    Activity
+    Activity,
+    Bookmark
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -47,8 +48,8 @@ const getStudentNav = (basePath: string): NavItem[] => [
     { label: "Overview", href: `${basePath}/overview`, icon: Home },
     { label: "Webinars & Cohorts", href: `${basePath}/webinars`, icon: MonitorPlay },
     { label: "Assignments & Reports", href: `${basePath}/assignments`, icon: BookOpen },
-    { label: "Certificate", href: `${basePath}/certificate`, icon: Award },
-    { label: "Payments", href: `${basePath}/payments`, icon: DollarSign },
+    { label: "Certificate", href: `${basePath}/certificate`, icon: Bookmark },
+    { label: "Profile", href: `${basePath}/profile`, icon: Users },
 ];
 
 const getEducatorNav = (basePath: string): NavItem[] => [

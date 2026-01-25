@@ -17,7 +17,7 @@ export default function DashLayout({ children, role }: DashLayoutProps) {
             <DashSidebar role={role} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
             <DashNavbar role={role} onMenuClick={() => setSidebarOpen(true)} />
             <main className="lg:pl-64 pt-20 h-full transition-all duration-300">
-                <div className="p-4">
+                <div className="">
                     {children}
                 </div>
             </main>

@@ -33,26 +33,30 @@ export default function StudentDashboardPage() {
 
             {/* Webinars Section */}
             <div className="mb-10">
-                <div className="flex gap-2 mb-6 bg-gray-100 p-1 rounded-lg w-fit">
-                    <button
-                        onClick={() => setActiveTab("Upcoming")}
-                        className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${activeTab === "Upcoming"
-                            ? "bg-white text-[#021165] shadow-sm"
-                            : "text-gray-500 hover:text-gray-700"
-                            }`}
-                    >
-                        Upcoming Webinars
-                    </button>
-                    <button
-                        onClick={() => setActiveTab("Past")}
-                        className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${activeTab === "Past"
-                            ? "bg-white text-[#021165] shadow-sm"
-                            : "text-gray-500 hover:text-gray-700"
-                            }`}
-                    >
-                        Past Webinars
-                    </button>
-                </div>
+              <div className="flex gap-2 mb-6 bg-gray-100 p-1 rounded-lg w-fit">
+  <button
+    onClick={() => setActiveTab("Upcoming")}
+    className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+      activeTab === "Upcoming"
+        ? "bg-[#294BFD] text-white shadow-sm"
+        : "text-gray-500 hover:text-gray-700"
+    }`}
+  >
+    Upcoming Webinars
+  </button>
+
+  <button
+    onClick={() => setActiveTab("Past")}
+    className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+      activeTab === "Past"
+        ? "bg-[#294BFD] text-white shadow-sm"
+        : "text-gray-500 hover:text-gray-700"
+    }`}
+  >
+    Past Webinars
+  </button>
+</div>
+
 
                 {isLoading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

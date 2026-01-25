@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import useSession from "@/hooks/useSession";
 
-export default function SettingsPage() {
+export default function ProfilePage() {
   const { user } = useSession();
   const [isEditing, setIsEditing] = useState(false);
 
