@@ -19,9 +19,13 @@ import {
     Award,
     DollarSign,
     Activity,
+<<<<<<< HEAD
     Airplay,
     Bookmark,
     UserRound
+=======
+    Bookmark
+>>>>>>> 945ed2bff244333123d3bf0ee8fcc2f7e0ea3cf7
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -47,11 +51,19 @@ const getAdminNav = (basePath: string): NavItem[] => [
 ];
 
 const getStudentNav = (basePath: string): NavItem[] => [
+<<<<<<< HEAD
     { label: "Dashboard", href: `${basePath}/dashboard`, icon: Home },
     { label: "My Sessions", href: `${basePath}/sessions`, icon: Airplay },
     { label: "Assignments", href: `${basePath}/assignments`, icon: BookOpen },
     { label: "Certificate", href: `${basePath}/certificate`, icon: Bookmark },
     { label: "Profile", href: `${basePath}/profile`, icon: UserRound },
+=======
+    { label: "Overview", href: `${basePath}/overview`, icon: Home },
+    { label: "Webinars & Cohorts", href: `${basePath}/webinars`, icon: MonitorPlay },
+    { label: "Assignments & Reports", href: `${basePath}/assignments`, icon: BookOpen },
+    { label: "Certificate", href: `${basePath}/certificate`, icon: Bookmark },
+    { label: "Profile", href: `${basePath}/profile`, icon: Users },
+>>>>>>> 945ed2bff244333123d3bf0ee8fcc2f7e0ea3cf7
 ];
 
 const getEducatorNav = (basePath: string): NavItem[] => [

@@ -6,14 +6,14 @@ export const dashboardService = {
         const res = await authApi.get("/dashboard/studentOverview");
         console.log("Student Overview API Response:", res);
         const data = res.data?.data || {};
-
+         const totalEnrolledCourses=data?.overview?.totalEnrolledCourses
         // Transform recentSessions to match Webinar interface partially
-        const mappedWebinars = (data.recentSessions || []).map((session: any) => ({
+        const mappedWebinars = (data.upcomingCourses || []).map((session: any) => ({
             id: session.id,
             title: session.title,
-            educatorName: "Educator", // Placeholder
-            description: "Live Session - " + session.status,
-            scheduledDate: session.attendedAt,
+            educatorName: session.educatorName || "Educator", // Placeholder
+            description: session.id || "Live Session - " + session.status,
+            scheduledDate: session.startDateTime,
             time: new Date(session.attendedAt).toLocaleTimeString(),
             thumbnail: "/images/placeholder.png"
         }));
@@ -22,7 +22,8 @@ export const dashboardService = {
             webinars: mappedWebinars,
             assignments: data.dueAssignments || [],
             dueAssignments: data.dueAssignments || [],
-            submittedAssignments: []
+            submittedAssignments: [],
+            totalEnrolledCourses:totalEnrolledCourses,
         } as StudentOverviewResponse;
     },
 };

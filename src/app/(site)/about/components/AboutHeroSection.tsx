@@ -52,7 +52,7 @@ export default function AboutHeroSection() {
             </p>
           </div>
 
-          {/* Buttons */}
+          {/* Button */}
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-[18px] flex-wrap">
             <Button
               variant="outline"

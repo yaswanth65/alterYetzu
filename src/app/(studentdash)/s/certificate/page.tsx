@@ -3,7 +3,12 @@
 import React from "react"; 
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
  import { Award } from "lucide-react";
+=======
+import { Webinar,totalEnrolledCourses } from "@/lib/queries/dashboard/types";
+import './cert.css'
+>>>>>>> 945ed2bff244333123d3bf0ee8fcc2f7e0ea3cf7
 export default function CertificatesPage() {
  
   const CERTIFICATES_DATA = [
@@ -21,6 +26,7 @@ export default function CertificatesPage() {
       {/* Divider */}
       <div className="w-full h-px bg-gray-300 mb-6" />
 
+<<<<<<< HEAD
       {/* Certificates List */}
       <div className="flex flex-col gap-4">
         {CERTIFICATES_DATA.map((cert) => (
@@ -95,4 +101,74 @@ export default function CertificatesPage() {
 
     </>
   );
+=======
+    // Using filtered webinars or all webinars as per requirement. 
+    // Since API doesn't distinguish 'completed' explicitly in types provided, 
+    // we assume the list returned are the ones user has access to/completed.
+    const webinars: Webinar[] = data?.webinars || [];
+   const totalEnrolledCourses: number = data?.totalEnrolledCourses ?? 0;
+    // Fallback/Demo Data only if API is empty and loading is done (optional, but good for visualizing the layout without data)
+    // Removed to stick to real data as per "cache and use it" instruction.
+
+    return (
+    
+  <div className="container pt-4">
+    <h2 className="title">Your Certificates</h2>
+
+    <div className="certificate-card">
+      <div className="left">
+           <span className="icon"> <Image
+              src={"/images/medal.svg"}
+              alt=""
+              width={15}
+              height={20}
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            /></span>
+       <span className="text">The Trending AI skills</span>
+      </div>
+      <button className="download-btn">Download Now</button>
+    </div>
+
+    <div className="certificate-card">
+      <div className="left">
+  <span className="icon"> <Image
+              src={"/images/medal.svg"}
+              alt=""
+              width={15}
+              height={20}
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            /></span>        <span className="text">The Trending AI skills</span>
+      </div>
+      <button className="download-btn">Download Now</button>
+    </div>
+
+    <div className="certificate-card">
+      <div className="left">
+  <span className="icon"> <Image
+              src={"/images/medal.svg"}
+              alt=""
+              width={15}
+              height={20}
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            /></span>        <span className="text">The Trending AI skills</span>
+      </div>
+      <button className="download-btn">Download Now</button>
+    </div>
+
+    <div className="certificate-card">
+      <div className="left">
+  <span className="icon"> <Image
+              src={"/images/medal.svg"}
+              alt=""
+              width={15}
+              height={20}
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            /></span>        <span className="text">The Trending AI skills</span>
+      </div>
+      <button className="download-btn">Download Now</button>
+    </div>
+  </div>
+
+    );
+>>>>>>> 945ed2bff244333123d3bf0ee8fcc2f7e0ea3cf7
 }

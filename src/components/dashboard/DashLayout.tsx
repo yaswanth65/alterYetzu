@@ -27,6 +27,7 @@ export default function DashLayout({ children, role }: DashLayoutProps) {
     };
 
     return (
+<<<<<<< HEAD
         <div className="flex h-screen bg-gray-50 overflow-hidden">
             <DashSidebar 
                 role={role} 
@@ -56,6 +57,16 @@ export default function DashLayout({ children, role }: DashLayoutProps) {
                     )}
                 </main>
             </div>
+=======
+        <div className="min-h-screen bg-gray-50">
+            <DashSidebar role={role} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+            <DashNavbar role={role} onMenuClick={() => setSidebarOpen(true)} />
+            <main className="lg:pl-64 pt-20 h-full transition-all duration-300">
+                <div className="">
+                    {children}
+                </div>
+            </main>
+>>>>>>> 945ed2bff244333123d3bf0ee8fcc2f7e0ea3cf7
         </div>
     );
 }
